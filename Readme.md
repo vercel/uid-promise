@@ -1,13 +1,8 @@
 # uid-promise
 
-Creates a cryptographically strong UID with a 62 character range that
+Creates a cryptographically secure UID with a 62 character range that
 can be safely used in URLs.
 
-```
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
-```
-
-## How to use
 
 ```js
 import uid from 'uid-promise';
@@ -25,6 +20,8 @@ export default async function getURL () {
 of length `len`.
 - `len` must always be provided, else the promise is rejected
 - Under the hood, `crypto.randomBytes` is used.
+- Character set:
+  ```ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789```
 
 ## Credits
 
