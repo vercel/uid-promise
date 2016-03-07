@@ -1,6 +1,6 @@
 # uid-promise
 
-Creates a cryptographically secure UID with a 62 character range that
+Creates a cryptographically strong UID with a 62 character range that
 can be safely used in URLs.
 
 ```
