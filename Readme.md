@@ -14,14 +14,17 @@ export default async function getURL () {
 
 ## API
 
-### `uid(len) => Promise`
+**`uid(Number len) => Promise`**
 
 - Return a `Promise` that resolves with a string of random characters
 of length `len`.
 - `len` must always be provided, else the promise is rejected
 - Under the hood, `crypto.randomBytes` is used.
 - Character set:
-  ```ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789```
+  
+  ```
+  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
+  ```
 
 ## Credits
 
