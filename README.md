@@ -1,4 +1,4 @@
-# uid-promise
+# uid-promise [![Build Status](https://travis-ci.org/zeit/uid-promise.svg?branch=master)](https://travis-ci.org/zeit/uid-promise)
 
 Creates a cryptographically secure UID with a 62 character range that
 can be safely used in URLs.
