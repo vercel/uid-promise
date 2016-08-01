@@ -10,7 +10,7 @@
   "devDependencies": {
     "eslint-config-standard": "5.3.5",
     "eslint-plugin-standard": "2.0.0",
-    "eslint": "3.1.1",
+    "eslint": "3.2.1",
     "eslint-plugin-promise": "2.0.0"
   },
   "greenkeeper": {
