@@ -1,4 +1,5 @@
-const uid = require('.');
-uid(20).then(function (str) {
-  console.log('random uid:', str);
-});
+const uid = require('.')
+
+uid(20).then(str => {
+  console.log('random uid:', str)
+})
