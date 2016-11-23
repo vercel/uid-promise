@@ -6,7 +6,7 @@ const UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 // dashes
 const DASHES = '-_'
 
-module.exports = (len, useDashes = true) => {
+module.exports = (len, useDashes = false) => {
   return new Promise((resolve, reject) => {
     if (typeof len !== 'number') {
       reject(new TypeError('You must supply a length integer to `uid-promise`.'))
