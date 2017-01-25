@@ -6,14 +6,23 @@ const UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 // dashes
 const DASHES = '-_'
 
-module.exports = (len, useDashes = false) => {
+// default options
+let options = {
+  useDashes: false
+}
+
+module.exports = (len, opts) => {
+  if (typeof opts === 'object') {
+    options = Object.assign(options, opts)
+  }
+
   return new Promise((resolve, reject) => {
     if (typeof len !== 'number') {
       reject(new TypeError('You must supply a length integer to `uid-promise`.'))
       return
     }
 
-    const CHARS = useDashes ? UIDCHARS + DASHES : UIDCHARS
+    const CHARS = options.useDashes ? UIDCHARS + DASHES : UIDCHARS
 
     crypto.randomBytes(len, (err, buf) => {
       if (err) {
