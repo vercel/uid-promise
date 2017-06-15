@@ -1,6 +1,6 @@
 const crypto = require('crypto')
 
-// charset from github.com/coreh/uid2
+// Charset from github.com/coreh/uid2
 const UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 module.exports = function (len) {
