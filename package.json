@@ -7,7 +7,7 @@
     "index.js"
   ],
   "scripts": {
-    "test": "xo"
+    "test": "xo && ava"
   },
   "dependencies": {},
   "devDependencies": {
