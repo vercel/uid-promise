@@ -1,7 +1,6 @@
 const crypto = require('crypto')
 
-// charset from github.com/coreh/uid2
-const UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+const UIDCHARS = require('./chars')
 
 // dashes
 const DASHES = '-_'
