@@ -17,13 +17,13 @@ test('should contain only UIDCHARS', async t => {
 })
 
 test('should throw if no integer supplied', async t => {
-  uid().then(uid => {}).catch(err => {
+  uid().then(console.log).catch(err => {
     t.is(err instanceof Error, true)
   })
 })
 
 test('should throw if integer is not positive value', async t => {
-  uid(0).then(uid => {}).catch(err => {
+  uid(0).then(console.log).catch(err => {
     t.is(err instanceof Error, true)
   })
 })
