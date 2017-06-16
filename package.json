@@ -2,9 +2,9 @@
   "name": "uid-promise",
   "version": "0.1.0",
   "description": "generates a cryptographically strong random uid",
-  "main": "index.js",
+  "main": "lib/index.js",
   "files": [
-    "index.js"
+    "lib"
   ],
   "scripts": {
     "test": "xo && ava"
