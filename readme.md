@@ -5,12 +5,24 @@
 
 Creates a cryptographically secure UID with a 62 character range that can be safely used in URLs.
 
+## Usage
+
+Firstly, install the package from [npm](https://www.npmjs.com):
+
 ```js
-import uid from 'uid-promise';
-export default async function getURL () {
-  const id = await uid(20);
-  return `https://myhost.com/p/${id}`;
-}
+npm install --save uid-promise
+```
+
+Then load it:
+
+```js
+const uid = require('uid-promise')
+```
+
+Finally, call it:
+
+```js
+await uid(20)
 ```
 
 ## API
