@@ -7,10 +7,11 @@
     "index.js"
   ],
   "scripts": {
-    "test": "xo"
+    "test": "xo && ava"
   },
   "dependencies": {},
   "devDependencies": {
+    "ava": "^0.19.1",
     "xo": "^0.17.0"
   },
   "greenkeeper": {
