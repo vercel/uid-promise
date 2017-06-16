@@ -3,10 +3,7 @@
 [![Build Status](https://travis-ci.org/zeit/uid-promise.svg?branch=master)](https://travis-ci.org/zeit/uid-promise)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
-
-Creates a cryptographically secure UID with a 62 character range that
-can be safely used in URLs.
-
+Creates a cryptographically secure UID with a 62 character range that can be safely used in URLs.
 
 ```js
 import uid from 'uid-promise';
@@ -30,8 +27,7 @@ of length `len`.
   ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
   ```
 
-## Credits
+## Authors
 
-- Copyright © 2016 Zeit, Inc and project authors.
-- Licensed under MIT.
-- ▲
+- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) - [▲ZEIT](https://zeit.co)
+- Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [▲ZEIT](https://zeit.co)
