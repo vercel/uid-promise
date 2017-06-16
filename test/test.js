@@ -1,6 +1,9 @@
+// Packages
 const test = require('ava')
-const UIDCHARS = require('./chars')
-const uid = require('.')
+
+// Utilities
+const UIDCHARS = require('../lib/chars')
+const uid = require('../lib')
 
 test('uid should be correct length', async t => {
   const len = Math.floor(Math.random() * 1000)
