@@ -9,6 +9,8 @@
   "scripts": {
     "test": "xo && ava"
   },
+  "repository": "zeit/uid-promise",
+  "license": "MIT",
   "xo": {
     "esnext": true,
     "space": true,
