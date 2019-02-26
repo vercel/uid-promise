@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "generates a cryptographically strong random uid",
   "main": "lib/index.js",
-  "types": "lib/index.d.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
