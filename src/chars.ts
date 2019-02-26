@@ -2,3 +2,4 @@
 const UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 export default UIDCHARS;
+module.exports = UIDCHARS;

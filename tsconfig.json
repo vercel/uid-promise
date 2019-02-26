@@ -19,6 +19,6 @@
         "./node_modules/@types"
       ]
     },
-    "include": ["./src", "./test", "./types", "./examples"]
+    "include": ["./src", "./test"]
   }
   

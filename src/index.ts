@@ -37,3 +37,4 @@ const uuid = (len: number) => new Promise((resolve, reject) => {
 })
 
 export default uuid;
+module.exports = uuid;
