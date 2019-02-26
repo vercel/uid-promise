@@ -3,3 +3,10 @@ node_modules
 
 # logs
 npm-debug.log
+
+# locks
+package-lock.json
+yarn.lock
+
+# dist
+lib
