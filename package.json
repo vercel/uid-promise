@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "ava"
+    "test": "tsc && ava"
   },
   "repository": "zeit/uid-promise",
   "license": "MIT",
