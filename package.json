@@ -3,21 +3,19 @@
   "version": "1.0.1",
   "description": "generates a cryptographically strong random uid",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "test": "xo && ava"
+    "build": "tsc",
+    "test": "tsc && ava"
   },
   "repository": "zeit/uid-promise",
   "license": "MIT",
-  "xo": {
-    "esnext": true,
-    "space": true,
-    "semicolon": false
-  },
   "devDependencies": {
+    "@types/node": "11.9.5",
     "ava": "0.19.1",
-    "xo": "0.17.0"
+    "typescript": "3.3.3333"
   }
 }

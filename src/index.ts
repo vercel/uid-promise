@@ -1,10 +1,10 @@
 // Packages
-const crypto = require('crypto')
+import { randomBytes } from 'crypto';
 
 // Utilities
-const UIDCHARS = require('./chars')
+import UIDCHARS from './chars';
 
-module.exports = len => new Promise((resolve, reject) => {
+const uuid = (len: number) => new Promise<string>((resolve, reject) => {
   if (!Number.isInteger(len)) {
     reject(new TypeError('You must supply a length integer to `uid-promise`.'))
     return
@@ -15,7 +15,7 @@ module.exports = len => new Promise((resolve, reject) => {
     return
   }
 
-  crypto.randomBytes(len, (err, buf) => {
+  randomBytes(len, (err, buf) => {
     if (err) {
       return reject(err)
     }
@@ -25,7 +25,7 @@ module.exports = len => new Promise((resolve, reject) => {
       rand = buf[i]
       while (rand > 248) {
         try {
-          rand = crypto.randomBytes(1)[0]
+          rand = randomBytes(1)[0]
         } catch (err) {
           reject(err)
         }
@@ -35,3 +35,6 @@ module.exports = len => new Promise((resolve, reject) => {
     resolve(str.join(''))
   })
 })
+
+export default uuid;
+module.exports = uuid;
