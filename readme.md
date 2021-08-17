@@ -1,7 +1,5 @@
 # uid-promise
 
-[![Build Status](https://travis-ci.org/zeit/uid-promise.svg?branch=master)](https://travis-ci.org/zeit/uid-promise)
-
 Creates a cryptographically secure UID with a 62 character range that can be safely used in URLs.
 
 ## Usage
@@ -15,13 +13,13 @@ npm install --save uid-promise
 Then load it:
 
 ```js
-const uid = require('uid-promise')
+const uid = require('uid-promise');
 ```
 
 Finally, call it:
 
 ```js
-await uid(20)
+await uid(20);
 ```
 
 ## API
@@ -29,12 +27,12 @@ await uid(20)
 **`uid(Number len) => Promise`**
 
 - Return a `Promise` that resolves with a string of random characters
-of length `len`
+  of length `len`
 - `len` must always be provided, else the promise is rejected
 - Under the hood, `crypto.randomBytes` is used
 - Character set: `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`
 
 ## Authors
 
-- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) - [▲ZEIT](https://zeit.co)
-- Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [▲ZEIT](https://zeit.co)
+- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) - [Vercel](https://vercel.com)
+- Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [Vercel](https://vercel.com)
