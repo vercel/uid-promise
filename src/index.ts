@@ -8,7 +8,7 @@ const uuid = (len: number) =>
   new Promise<string>((resolve, reject) => {
     if (!Number.isInteger(len)) {
       reject(
-        new TypeError('You must supply a length integer to `uid-promise`.')
+        new TypeError('You must supply a length integer to `uid-promise`.'),
       );
       return;
     }
