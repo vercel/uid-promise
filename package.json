@@ -20,9 +20,8 @@
     "typescript": "4.3.5"
   },
   "prettier": {
-    "arrowParens": "always",
     "singleQuote": true,
     "tabWidth": 2,
-    "trailingComma": "none"
+    "trailingComma": "all"
   }
 }
