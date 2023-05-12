@@ -9,6 +9,7 @@ jobs:
     strategy:
       matrix:
         node-version:
+          - 18
           - 16
           - 14
     steps:
@@ -17,4 +18,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn test
+      - run: yarn test:cjs
+      - run: [[ "${{ matrix.node-version }}" = 18 ]] && yarn test:esm || true

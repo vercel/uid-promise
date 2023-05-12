@@ -15,9 +15,10 @@ const uuid = (len: number) =>
       return;
     }
 
-    const isBrowser = typeof globalThis.crypto !== 'undefined';
+    const isWebCryptoFuncDefined =
+      typeof globalThis.crypto?.getRandomValues === 'function';
 
-    const randomBytes = isBrowser
+    const randomBytes = isWebCryptoFuncDefined
       ? await import('./web-random-bytes').then((mod) => mod.randomBytes)
       : await import('./node-random-bytes').then((mod) => mod.randomBytes);
 
