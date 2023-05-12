@@ -7,22 +7,27 @@
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/cjs/index.d.ts",
+  "packageManager": "pnpm@7.25.0",
+  "engines": {
+    "node": "18.x",
+    "pnpm": "7"
+  },
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "yarn build:cjs && yarn build:esm",
+    "build": "pnpm build:cjs && pnpm build:esm",
     "build:cjs": "tsc",
-    "build:esm": "tsc --module esnext --outDir ./lib/esm",
-    "test": "yarn test:cjs && yarn test:webcrypto",
-    "test:cjs": "yarn build:cjs && ava",
-    "test:webcrypto": "yarn build:cjs && ava --node-arguments=\"--experimental-global-webcrypto\""
+    "build:esm": "tsc --module esnext --outDir ./lib/esm && echo '{ \"type\": \"module\" }' > ./lib/esm/package.json",
+    "test": "pnpm test:cjs && pnpm test:esm && pnpm test:webcrypto",
+    "test:cjs": "pnpm build:cjs && node --test test/test.js",
+    "test:esm": "pnpm build:esm && node --test --es-module-specifier-resolution=node test/test-esm.mjs",
+    "test:webcrypto": "pnpm build:cjs && node --test --experimental-global-webcrypto test/test.js"
   },
   "devDependencies": {
-    "@types/node": "16.6.1",
-    "ava": "5.2.0",
+    "@types/node": "20.1.3",
     "prettier": "2.3.2",
-    "typescript": "4.3.5"
+    "typescript": "4.9.5"
   },
   "prettier": {
     "singleQuote": true,

@@ -1,7 +1,7 @@
 // Utilities
-import UIDCHARS from './chars';
+import { UIDCHARS } from './chars';
 
-const uuid = (len: number) =>
+export const uid = (len: number) =>
   new Promise<string>(async (resolve, reject) => {
     if (!Number.isInteger(len)) {
       reject(
@@ -42,6 +42,3 @@ const uuid = (len: number) =>
       resolve(str.join(''));
     });
   });
-
-export default uuid;
-module.exports = uuid;
