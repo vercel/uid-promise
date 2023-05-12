@@ -1,11 +1,8 @@
-// Packages
-import { randomBytes } from 'crypto';
-
 // Utilities
 import UIDCHARS from './chars';
 
 const uuid = (len: number) =>
-  new Promise<string>((resolve, reject) => {
+  new Promise<string>(async (resolve, reject) => {
     if (!Number.isInteger(len)) {
       reject(
         new TypeError('You must supply a length integer to `uid-promise`.'),
@@ -17,6 +14,12 @@ const uuid = (len: number) =>
       reject(new Error('You must supply a length integer greater than zero'));
       return;
     }
+
+    const isBrowser = typeof globalThis.crypto !== 'undefined';
+
+    const randomBytes = isBrowser
+      ? await import('./web-random-bytes').then((mod) => mod.randomBytes)
+      : await import('./node-random-bytes').then((mod) => mod.randomBytes);
 
     randomBytes(len, (err, buf) => {
       if (err) {

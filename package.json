@@ -4,13 +4,14 @@
   "license": "MIT",
   "description": "generates a cryptographically strong random uid",
   "repository": "vercel/uid-promise",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/cjs/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc -p tsconfig.esm.json",
     "test": "tsc && ava"
   },
   "devDependencies": {

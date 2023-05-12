@@ -2,8 +2,8 @@
 const test = require('ava');
 
 // Utilities
-const UIDCHARS = require('../lib/chars');
-const uid = require('../lib');
+const UIDCHARS = require('../lib/cjs/chars');
+const uid = require('../lib/cjs');
 
 test('should be correct length', async (t) => {
   const len = 1 + Math.floor(Math.random() * 1000);
