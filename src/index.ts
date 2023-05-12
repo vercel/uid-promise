@@ -15,10 +15,11 @@ const uuid = (len: number) =>
       return;
     }
 
-    const randomBytes =
-      typeof window !== 'undefined'
-        ? await import('./web-random-bytes').then((mod) => mod.randomBytes)
-        : await import('./node-random-bytes').then((mod) => mod.randomBytes);
+    const isBrowser = typeof globalThis.crypto !== 'undefined';
+
+    const randomBytes = isBrowser
+      ? await import('./web-random-bytes').then((mod) => mod.randomBytes)
+      : await import('./node-random-bytes').then((mod) => mod.randomBytes);
 
     randomBytes(len, (err, buf) => {
       if (err) {
