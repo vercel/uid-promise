@@ -19,6 +19,6 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: yarn install
       - run: yarn test:cjs
-      - name: Test ESM
+      - name: Test WebCrypto
         if: matrix.node != 16
-        run: yarn test:esm
+        run: yarn test:webcrypto

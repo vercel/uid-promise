@@ -14,9 +14,9 @@
     "build": "yarn build:cjs && yarn build:esm",
     "build:cjs": "tsc",
     "build:esm": "tsc --module esnext --outDir ./lib/esm",
-    "test": "yarn test:cjs && yarn test:esm",
+    "test": "yarn test:cjs && yarn test:webcrypto",
     "test:cjs": "yarn build:cjs && ava",
-    "test:esm": "yarn build:esm && ava --node-arguments=\"--experimental-global-webcrypto\""
+    "test:webcrypto": "yarn build:cjs && ava --node-arguments=\"--experimental-global-webcrypto\""
   },
   "devDependencies": {
     "@types/node": "16.6.1",
