@@ -1,11 +1,8 @@
-// Packages
-import { randomBytes } from 'crypto';
+// the file extension is needed for ESM
+import { UIDCHARS } from './chars.js';
 
-// Utilities
-import UIDCHARS from './chars';
-
-const uuid = (len: number) =>
-  new Promise<string>((resolve, reject) => {
+export const uid = (len: number) =>
+  new Promise<string>(async (resolve, reject) => {
     if (!Number.isInteger(len)) {
       reject(
         new TypeError('You must supply a length integer to `uid-promise`.'),
@@ -17,6 +14,14 @@ const uuid = (len: number) =>
       reject(new Error('You must supply a length integer greater than zero'));
       return;
     }
+
+    const isWebCryptoFuncDefined =
+      typeof globalThis.crypto?.getRandomValues === 'function';
+
+    const randomBytes = isWebCryptoFuncDefined
+      ? // the file extensions are needed for ESM
+        await import('./web-random-bytes.js').then((mod) => mod.randomBytes)
+      : await import('./node-random-bytes.js').then((mod) => mod.randomBytes);
 
     randomBytes(len, (err, buf) => {
       if (err) {
@@ -38,6 +43,3 @@ const uuid = (len: number) =>
       resolve(str.join(''));
     });
   });
-
-export default uuid;
-module.exports = uuid;

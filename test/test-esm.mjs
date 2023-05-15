@@ -1,10 +1,10 @@
 // Packages
-const test = require('node:test');
-const assert = require('node:assert')
+import test from 'node:test';
+import assert from 'node:assert';
 
 // Utilities
-const {UIDCHARS} = require('../lib/cjs/chars');
-const { uid } = require('../lib/cjs');
+import {UIDCHARS} from '../lib/esm/chars.js';
+import {uid} from '../lib/esm/index.js';
 
 test('should be correct length', async () => {
   const len = 1 + Math.floor(Math.random() * 1000);
