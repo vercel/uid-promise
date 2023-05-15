@@ -7,7 +7,7 @@
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/cjs/index.d.ts",
-  "packageManager": "pnpm@7.25.0",
+  "packageManager": "pnpm@8.5.1",
   "engines": {
     "node": ">=18"
   },
