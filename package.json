@@ -9,8 +9,7 @@
   "types": "lib/cjs/index.d.ts",
   "packageManager": "pnpm@7.25.0",
   "engines": {
-    "node": "18.x",
-    "pnpm": "7"
+    "node": ">=18"
   },
   "files": [
     "lib"
@@ -21,7 +20,7 @@
     "build:esm": "tsc --module esnext --outDir ./lib/esm && echo '{ \"type\": \"module\" }' > ./lib/esm/package.json",
     "test": "pnpm test:cjs && pnpm test:esm && pnpm test:webcrypto",
     "test:cjs": "pnpm build:cjs && node --test test/test.js",
-    "test:esm": "pnpm build:esm && node --test --es-module-specifier-resolution=node test/test-esm.mjs",
+    "test:esm": "pnpm build:esm && node --test test/test-esm.mjs",
     "test:webcrypto": "pnpm build:cjs && node --test --experimental-global-webcrypto test/test.js"
   },
   "devDependencies": {

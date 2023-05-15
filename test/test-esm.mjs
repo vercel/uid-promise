@@ -3,8 +3,8 @@ import test from 'node:test';
 import assert from 'node:assert';
 
 // Utilities
-import {UIDCHARS} from '../lib/esm/chars';
-import {uid} from '../lib/esm/index';
+import {UIDCHARS} from '../lib/esm/chars.js';
+import {uid} from '../lib/esm/index.js';
 
 test('should be correct length', async () => {
   const len = 1 + Math.floor(Math.random() * 1000);

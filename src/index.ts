@@ -1,5 +1,5 @@
-// Utilities
-import { UIDCHARS } from './chars';
+// the file extension is needed for ESM
+import { UIDCHARS } from './chars.js';
 
 export const uid = (len: number) =>
   new Promise<string>(async (resolve, reject) => {
@@ -19,8 +19,9 @@ export const uid = (len: number) =>
       typeof globalThis.crypto?.getRandomValues === 'function';
 
     const randomBytes = isWebCryptoFuncDefined
-      ? await import('./web-random-bytes').then((mod) => mod.randomBytes)
-      : await import('./node-random-bytes').then((mod) => mod.randomBytes);
+      ? // the file extensions are needed for ESM
+        await import('./web-random-bytes.js').then((mod) => mod.randomBytes)
+      : await import('./node-random-bytes.js').then((mod) => mod.randomBytes);
 
     randomBytes(len, (err, buf) => {
       if (err) {

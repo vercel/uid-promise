@@ -5,7 +5,6 @@ const assert = require('node:assert')
 // Utilities
 const {UIDCHARS} = require('../lib/cjs/chars');
 const { uid } = require('../lib/cjs');
-console.log(uid);
 
 test('should be correct length', async () => {
   const len = 1 + Math.floor(Math.random() * 1000);
