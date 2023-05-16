@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "declarationDir": "./lib/types",
     "esModuleInterop": true,
     "lib": ["esnext", "DOM"],
     "module": "commonjs",

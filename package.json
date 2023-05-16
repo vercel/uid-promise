@@ -4,9 +4,7 @@
   "license": "MIT",
   "description": "generates a cryptographically strong random uid",
   "repository": "vercel/uid-promise",
-  "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
-  "types": "lib/cjs/index.d.ts",
+  "types": "lib/types/index.d.ts",
   "packageManager": "pnpm@8.5.1",
   "engines": {
     "node": ">=18"
@@ -14,14 +12,17 @@
   "files": [
     "lib"
   ],
+  "exports": {
+    "import": "./lib/esm/index.browser.js",
+    "default": "./lib/cjs/index.js"
+  },
   "scripts": {
     "build": "pnpm build:cjs && pnpm build:esm",
     "build:cjs": "tsc",
     "build:esm": "tsc --module esnext --outDir ./lib/esm && echo '{ \"type\": \"module\" }' > ./lib/esm/package.json",
-    "test": "pnpm test:cjs && pnpm test:esm && pnpm test:webcrypto",
+    "test": "pnpm test:cjs && pnpm test:esm",
     "test:cjs": "pnpm build:cjs && node --test test/test.js",
-    "test:esm": "pnpm build:esm && node --test test/test-esm.mjs",
-    "test:webcrypto": "pnpm build:cjs && node --test --experimental-global-webcrypto test/test.js"
+    "test:esm": "pnpm build:esm && node --test test/test-esm.mjs"
   },
   "devDependencies": {
     "@types/node": "20.1.3",
