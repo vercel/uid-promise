@@ -4,16 +4,16 @@ Creates a cryptographically secure UID with a 62 character range that can be saf
 
 ## Usage
 
-Firstly, install the package from [npm](https://www.npmjs.com):
+Install the package:
 
 ```js
-npm install --save uid-promise
+npm i uid-promise
 ```
 
-Then load it:
+Then import it:
 
 ```js
-const uid = require('uid-promise');
+import { uid } = from 'uid-promise';
 ```
 
 Finally, call it:
