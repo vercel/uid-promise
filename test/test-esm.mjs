@@ -1,5 +1,5 @@
 // Packages
-import test from 'node:test';
+import test from 'test';
 import assert from 'node:assert';
 
 // Utilities
