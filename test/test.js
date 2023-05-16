@@ -1,5 +1,5 @@
 // Packages
-const test = require('node:test');
+const test = require('test');
 const assert = require('node:assert')
 
 // Utilities
