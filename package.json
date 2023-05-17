@@ -13,8 +13,16 @@
     "lib"
   ],
   "exports": {
-    "import": "./lib/esm/index.browser.js",
-    "default": "./lib/cjs/index.js"
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "browser": "./lib/esm/index.browser.js",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    },
+    "./browser": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/esm/index.browser.js"
+    }
   },
   "scripts": {
     "build": "pnpm build:cjs && pnpm build:esm",
