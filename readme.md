@@ -34,5 +34,5 @@ await uid(20);
 
 ## Authors
 
-- Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) - [Vercel](https://vercel.com)
-- Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [Vercel](https://vercel.com)
+- Guillermo Rauch ([@rauchg](https://x.com/rauchg)) - [Vercel](https://vercel.com)
+- Leo Lamprecht ([@notquiteleo](https://x.com/leo)) - [Vercel](https://vercel.com)
