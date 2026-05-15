@@ -25,7 +25,7 @@ export const generateUidFunction =
         let rand;
         for (let i = 0; i < buf.length; i++) {
           rand = buf[i];
-          while (rand > 248) {
+          while (rand > 247) {
             try {
               rand = randomBytes(1)[0];
             } catch (err) {
